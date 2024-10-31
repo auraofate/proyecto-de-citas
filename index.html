@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoyo en Momentos Difíciles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Apoyo en Momentos Difíciles</h1>
+        <p>Vive cada día como si fuera el último, aprende de cada experiencia y ama sin medida.</p>
+    </header>
+
+    <section id="problemas">
+        <h2>Describe tu problema</h2>
+        <form id="form-problemas">
+            <label for="tipo-problema">Tipo de problema:</label>
+            <select id="tipo-problema" name="tipo-problema">
+                <option value="familiar">Familiar</option>
+                <option value="amigos">Amigos</option>
+                <option value="personal">Personal</option>
+            </select>
+
+            <label for="descripcion">Describe brevemente tu situación:</label>
+            <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+
+            <button type="submit">Continuar</button>
+        </form>
+    </section>
+
+    <section id="evaluacion" style="display:none;">
+        <h2>Evaluación de Prioridad</h2>
+        <form id="form-evaluacion">
+            <label for="peligro">¿Te sientes en peligro inmediato?</label>
+            <select id="peligro" name="peligro">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="frecuencia">¿Con qué frecuencia experimentas pensamientos negativos?</label>
+            <select id="frecuencia" name="frecuencia">
+                <option value="frecuente">Frecuentemente</option>
+                <option value="ocasional">Ocasionalmente</option>
+                <option value="rara-vez">Rara vez</option>
+            </select>
+
+            <label for="hablado">¿Has hablado antes con alguien sobre tus sentimientos?</label>
+            <select id="hablado" name="hablado">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="urgencia">¿Consideras que es urgente recibir ayuda?</label>
+            <select id="urgencia" name="urgencia">
+                <option value="muy-urgente">Muy urgente</option>
+                <option value="urgente">Urgente</option>
+                <option value="puede-esperar">Puede esperar</option>
+            </select>
+
+            <button type="submit">Enviar Evaluación</button>
+        </form>
+    </section>
+
+    <section id="cita" style="display:none;">
+        <h2>Agendar Cita</h2>
+        <form id="form-cita">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" name="cedula" required>
+
+            <label for="fecha">Fecha de la cita:</label>
+            <input type="date" id="fecha" name="fecha" required min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 month')); ?>">
+
+            <label for="hora">Selecciona un horario:</label>
+            <select id="hora" name="hora" required>
+                <option value="">Selecciona</option>
+                <option value="08:00">08:00 AM</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="15:00">03:00 PM</option>
+                <option value="16:00">04:00 PM</option>
+            </select>
+
+            <button type="submit">Confirmar Cita</button>
+        </form>
+    </section>
+
+    <section id="factura" style="display:none;">
+        <h2>Factura</h2>
+        <div id="factura-content"></div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
